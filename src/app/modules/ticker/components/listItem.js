@@ -4,14 +4,18 @@ import { View, Text, StyleSheet } from 'react-native';
 export default class extends Component {
   render() {
     const { item, index } = this.props;
-    const { key, last, highestBid, percentChange } = item;
+    const {
+      key, last, highestBid, percentChange
+    } = item;
+
+    const formattedPrecentChange = (percentChange * 100).toPrecision(4);
 
     return (
       <View style={styles.container} key={index}>
         <Text style={styles.key}>{key}</Text>
         <Text>{last}</Text>
         <Text>{highestBid}</Text>
-        <Text>{percentChange}</Text>
+        <Text>{formattedPrecentChange} %</Text>
       </View>
     );
   }

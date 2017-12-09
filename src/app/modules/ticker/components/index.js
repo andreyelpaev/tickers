@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet, Text } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { ticker } from '../actions';
 import ListItem from './listItem';
+import Header from './header';
+
 
 class Ticker extends Component {
 
@@ -18,14 +20,18 @@ class Ticker extends Component {
   render() {
     const { tickers } = this.props;
 
-
     const renderItem = ({ item, index }) => (
       <ListItem item={item} index={index} />
     );
 
     return (
       <View style={styles.container}>
-        <FlatList data={tickers} renderItem={renderItem} keyExtractor={(item, index) => item.id}/>
+        <FlatList
+          data={tickers}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => item.id}
+          ListHeaderComponent={<Header />}
+        />
       </View>
     );
   }
