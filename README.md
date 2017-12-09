@@ -1,2 +1,1 @@
-> npm i 
-> react-native run-android
+> npm i && react-native run-android
