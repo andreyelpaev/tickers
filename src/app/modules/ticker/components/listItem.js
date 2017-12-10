@@ -10,12 +10,14 @@ export default class extends Component {
 
     const formattedPrecentChange = (percentChange * 100).toPrecision(4);
 
+    const colorStyle = () => (formattedPrecentChange >= 0 ? { color: 'green' } : { color: 'red' });
+
     return (
       <View style={styles.container} key={index}>
         <Text style={styles.key}>{key}</Text>
         <Text>{last}</Text>
         <Text>{highestBid}</Text>
-        <Text>{formattedPrecentChange} %</Text>
+        <Text style={colorStyle()}>{formattedPrecentChange} %</Text>
       </View>
     );
   }
