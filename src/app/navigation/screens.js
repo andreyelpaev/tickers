@@ -1,7 +1,7 @@
 import Ticker from '../modules/ticker/components';
 import Some from '../modules/some/components';
 
-export default screens = {
+export default {
   Ticker: {
     screen: Ticker,
     navigationOptions: {

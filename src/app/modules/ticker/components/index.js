@@ -10,7 +10,6 @@ import Header from './header';
 
 
 class Ticker extends Component {
-
   componentDidMount() {
     const { ticker } = this.props;
     ticker();

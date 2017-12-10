@@ -1,5 +1,4 @@
-import { makeTypes } from '../constants/index';
-import { postfixes } from '../constants/index';
+import { makeTypes, postfixes } from '../constants/index';
 
 export function makeActions(prefix, type) {
   const types = makeTypes(prefix, type);

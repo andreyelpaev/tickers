@@ -14,4 +14,9 @@ const Container = () => (
   </Provider>
 );
 
-AppRegistry.registerComponent('poloniex', () => Container);
+function startApp() {
+  AppRegistry.registerComponent('poloniex', () => Container);
+}
+
+startApp();
+

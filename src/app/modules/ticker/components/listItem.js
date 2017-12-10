@@ -1,23 +1,25 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default class extends Component {
+export default class extends PureComponent {
   render() {
     const { item, index } = this.props;
     const {
       key, last, highestBid, percentChange
     } = item;
 
-    const formattedPrecentChange = (percentChange * 100).toPrecision(4);
+    const percent = parseFloat(percentChange * 100).toPrecision(4);
 
-    const colorStyle = () => (formattedPrecentChange >= 0 ? { color: 'green' } : { color: 'red' });
+    const colorStyle = () => (percent >= 0 ? { color: 'green' } : { color: 'red' });
 
     return (
       <View style={styles.container} key={index}>
         <Text style={styles.key}>{key}</Text>
         <Text>{last}</Text>
         <Text>{highestBid}</Text>
-        <Text style={colorStyle()}>{formattedPrecentChange} %</Text>
+        <Text style={StyleSheet.flatten([colorStyle(), styles.percent])}>
+          {percent} %
+        </Text>
       </View>
     );
   }
@@ -36,5 +38,8 @@ const styles = StyleSheet.create({
   key: {
     color: 'rgba(0, 0, 0, .87)',
     fontFamily: 'sans-serif-medium'
+  },
+  percent: {
+    fontWeight: 'bold'
   }
 });

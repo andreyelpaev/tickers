@@ -1,5 +1,4 @@
-import { makeTypes } from '../constants/index';
-import { postfixes } from '../constants/index';
+import { makeTypes, postfixes } from '../constants/index';
 
 const defaultState = {
   pending: false,
@@ -12,7 +11,7 @@ function requested(state, action) {
     ...state,
     pending: true,
     failed: false
-  }
+  };
 }
 
 function succeed(state, action) {
@@ -21,7 +20,7 @@ function succeed(state, action) {
     pending: false,
     loaded: true,
     failed: false
-  }
+  };
 }
 
 function failed(state, action) {
@@ -30,7 +29,7 @@ function failed(state, action) {
     pending: false,
     loaded: true,
     failed: true
-  }
+  };
 }
 
 function reset(state, action) {
@@ -39,7 +38,7 @@ function reset(state, action) {
 
 export function makeReducer(prefix, type, resetType) {
   const types = makeTypes(prefix, type);
-  
+
   const REQUESTED = `${type}${postfixes.REQUESTED}`;
   const SUCCEED = `${type}${postfixes.SUCCEED}`;
   const FAILED = `${type}${postfixes.FAILED}`;
@@ -54,8 +53,8 @@ export function makeReducer(prefix, type, resetType) {
 
     if (!handler) return state;
 
-    return handler(state, action)
+    return handler(state, action);
   };
 
   return requestReducer;
-};
+}
