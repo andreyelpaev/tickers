@@ -15,8 +15,6 @@ const defaultState = {
 
 function setData(state, action) {
   const { payload } = action;
-
-
   return {
     ...state,
     tickers: mapTickers(payload)

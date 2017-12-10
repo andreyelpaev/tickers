@@ -1,4 +1,4 @@
-import { call, put, takeEvery, race } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import { fetchTicker } from '../api';
 import types from '../constants/types';
 import { ticker, setData } from '../actions';
