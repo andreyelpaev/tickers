@@ -5,18 +5,17 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default class extends PureComponent {
   render() {
-    const { item, index } = this.props;
     const {
-      key, last, highestBid, percentChange
-    } = item;
-
+      name, last, highestBid, percentChange, index
+    } = this.props;
+    
     const percent = parseFloat(percentChange * 100).toPrecision(4);
 
     const colorStyle = () => (parseFloat(percent) >= 0 ? { color: 'green' } : { color: 'red' });
 
     return (
       <View style={styles.container} key={index}>
-        <Text style={styles.key}>{key}</Text>
+        <Text style={styles.key}>{name}</Text>
         <Text>{last}</Text>
         <Text>{highestBid}</Text>
         <Text style={StyleSheet.flatten([colorStyle(), styles.percent])}>

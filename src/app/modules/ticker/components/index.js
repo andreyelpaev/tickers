@@ -22,7 +22,7 @@ class Ticker extends Component {
     const { tickers } = this.props;
 
     const renderItem = ({ item, index }) => (
-      <ListItem item={item} index={index} />
+      <ListItem {...item} index={index} />
     );
 
     return (
