@@ -1,3 +1,5 @@
+// @flow
+
 import { combineReducers } from 'redux';
 
 import types, { PREFIX } from '../constants/types';

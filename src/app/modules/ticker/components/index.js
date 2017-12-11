@@ -1,5 +1,7 @@
+// @flow
+
 import React, { Component } from 'react';
-import { View, FlatList, StyleSheet, Text } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

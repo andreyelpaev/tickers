@@ -1,3 +1,5 @@
+// @flow
+
 import Ticker from '../modules/ticker/components';
 import Some from '../modules/some/components';
 

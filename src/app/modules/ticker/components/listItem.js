@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -10,7 +12,7 @@ export default class extends PureComponent {
 
     const percent = parseFloat(percentChange * 100).toPrecision(4);
 
-    const colorStyle = () => (percent >= 0 ? { color: 'green' } : { color: 'red' });
+    const colorStyle = () => (parseFloat(percent) >= 0 ? { color: 'green' } : { color: 'red' });
 
     return (
       <View style={styles.container} key={index}>

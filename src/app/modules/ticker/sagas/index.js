@@ -1,8 +1,12 @@
+// @flow
+
 import { call, put, takeEvery } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+
 import { fetchTicker } from '../api';
 import types from '../constants/types';
 import { ticker, setData } from '../actions';
-import { delay } from 'redux-saga';
+
 
 function* fetchData(action) {
   yield put(ticker.requested());

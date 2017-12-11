@@ -1,3 +1,5 @@
+// @flow
+
 import { generate } from 'src/app/utils/typesGenerator';
 import requestsFactory from 'src/app/utils/factories/requestsFactory';
 
